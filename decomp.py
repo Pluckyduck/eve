@@ -1,5 +1,3 @@
-# Credits go to wibiti
-
 from nasty import nasty, UnjumbleString
 import cPickle 
 import blue
@@ -45,6 +43,6 @@ for root, dirs, files in os.walk(blue.paths.ResolvePath(u'lib:/')):
                 if not os.path.exists(tgtdir):
                     os.makedirs(tgtdir)
                 with open(tgt, 'wb') as fp:
-                    fp.write(UnjumbleString(zf.read(path), True))
+                    fp.write(zf.read(path)) #fp.write(UnjumbleString(zf.read(path), True))
 					
 uthread.new(uicore.cmd.CmdQuitGame)
